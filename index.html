@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Redirecting...</title>
     <script>
-      const params = new URLSearchParams(window.location.search);
-      const to = params.get("to");
+      const to = new URLSearchParams(location.search).get('to');
       if (to) {
-        window.location.replace(to);
+        const i = document.createElement('iframe');
+        i.style.display = 'none';
+        i.src = to;
+        document.body.appendChild(i);
       }
     </script>
   </head>
   <body>
-    Redirecting...
+    Redirecting silently...
   </body>
 </html>
