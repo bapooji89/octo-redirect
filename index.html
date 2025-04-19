@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=https://5734-49-37-163-3.ngrok-free.app/?token=waf_bypass" />
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const target = urlParams.get("to");
+      if (target) {
+        window.location.href = target;
+      } else {
+        document.write("No redirection target specified.");
+      }
+    </script>
   </head>
-  <body>
-    <p>Redirecting to target...</p>
-  </body>
 </html>
